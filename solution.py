@@ -1,11 +1,18 @@
 import pandas as pd
 import numpy as np
 
+from scipy.stats import norm
+
 chat_id = 834639322 # Ваш chat ID, не меняйте название переменной
 
 def solution(p: float, x: np.array) -> tuple:
-    alpha = p
-    p_values = x
-    q = np.quantile(p_values, alpha)
-    confidence_interval = [0.083, q]
-    return confidence_interval[1], confidence_interval[0]
+    # Измените код этой функции
+    # Это будет вашим решением
+    # Не меняйте название функции и её аргументы
+    a = 0.083
+    alpha = 1 - p
+    loc = x.max()
+    n = len(x)
+    d = np.power(alpha,(1/n))
+    return loc, \
+           ((loc - a) / d + a + 0.005)
